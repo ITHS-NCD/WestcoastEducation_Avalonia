@@ -6,23 +6,28 @@ namespace Client.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    // [ObservableProperty]
-    // public partial ViewModelBase CurrentView { get; set; } = new ();
+    private readonly CoursesViewModel _courseView = new();
+    private readonly StudentsViewModel _studentView = new();
+    private readonly TeachersViewModel _teacherView = new();
 
+    [ObservableProperty]
+    public partial ViewModelBase CurrentView { get; set; }
     public MainWindowViewModel()
     {
-
+        CurrentView = _courseView;
     }
 
     [RelayCommand]
     public void GoToHome() => Console.WriteLine("Gå till hem");
 
     [RelayCommand]
-    public void GoToCourses() => Console.WriteLine("Gå till kurser");
+    public void GoToCourses() => CurrentView = _courseView;
+
     [RelayCommand]
-    public void GoToStudents() => Console.WriteLine("Gå till elever");
+    public void GoToStudents() => CurrentView = _studentView;
+
     [RelayCommand]
-    public void GoToTeachers() => Console.WriteLine("Gå till lärare");
+    public void GoToTeachers() => CurrentView = _teacherView;
 
 
 

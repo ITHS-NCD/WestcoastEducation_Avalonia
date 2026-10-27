@@ -5,6 +5,6 @@ namespace Client.ViewModels;
 
 public partial class ViewModelBase : ObservableObject
 {
-    // [ObservableProperty]
-    // public partial string PageTitle { get; set; } = "";
+    [ObservableProperty]
+    public partial string PageTitle { get; set; } = "";
 }

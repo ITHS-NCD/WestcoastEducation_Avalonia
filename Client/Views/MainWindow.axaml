@@ -16,12 +16,12 @@
         <Grid ColumnDefinitions="Auto,*" ShowGridLines="True" Background="{DynamicResource BackgroundColor}">
             <Border>
                 <StackPanel>
-                    <StackPanel>
+                    <Grid RowDefinitions="*,100">
+                            
+                    <StackPanel Grid.Column="0" Spacing="8" Margin="20 10">
+
                         <Label Content="WestCoast Education" FontSize="24" Padding="5" Margin="5" HorizontalAlignment="Center"  />
                         
-                    </StackPanel>
-                    
-                    <StackPanel Grid.Column="0" Spacing="8" Margin="20 10">
                         <Button Classes="menu" Command="{Binding GoToHomeCommand}">
                             <StackPanel Orientation="Horizontal" Spacing="10">
                                 <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE2c2;" />
@@ -51,8 +51,18 @@
                         </Button>
 
                     </StackPanel>
+
+                    <Button Classes="menu" Grid.Row="1" VerticalAlignment="Bottom" Margin="10 20">
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE270;" />
+                                <Label Content="Inställningar" />
+                            </StackPanel>
+                        </Button>
+
+                    </Grid>
                 </StackPanel>
             </Border>
+            <UserControl Grid.Column="1" Padding="24" Content="{Binding CurrentView}" />
         </Grid>
 
 
