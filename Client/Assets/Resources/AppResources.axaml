@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Add Resources Here -->
+  <SolidColorBrush x:Key="ForgroundColor" Color="{DynamicResource PrimaryForgroundColor}" />
+  <SolidColorBrush x:Key="BackgroundColor" Color="{DynamicResource PrimaryBackgroundColor}" />
+  <SolidColorBrush x:Key="AccentColor" Color="{DynamicResource PrimaryAccentColor}" />
+
+</ResourceDictionary>

@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Client.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Client.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Client">
+
+        <Design.DataContext>
+            <vm:MainWindowViewModel/>
+        </Design.DataContext>
+
+        <StackPanel>
+            <Border>
+                <Grid ColumnDefinitions="Auto,*" >
+                    <StackPanel>
+                        <Label Content="Westcoast Education" FontSize="24" Padding="15" />
+                        <Button Content="Kurser"  />
+                    </StackPanel>
+                    
+                </Grid>
+            </Border>
+
+
+        </StackPanel>
+</Window>

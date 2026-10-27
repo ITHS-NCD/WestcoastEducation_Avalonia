@@ -7,4 +7,15 @@
     <Application.Styles>
         <FluentTheme />
     </Application.Styles>
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <FontFamily x:Key="MontserratRegularFont">avares://Client/Asstes/Fonts#Montserrat</FontFamily>
+            <FontFamily x:Key="IconFont">avares://Client/Asstes/Fonts#Phosphor.ttf#Phosphor</FontFamily>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="Assets/Resource/ColorsResources.axaml" />
+                <ResourceInclude Source="Assets/Resource/AppRespurces.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
