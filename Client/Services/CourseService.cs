@@ -1,6 +1,8 @@
-﻿namespace Client;
+﻿using Client.Interfaces;
 
-public class CourseService
+namespace Client;
+
+public class CourseService : ICourseService
 {
 
 }

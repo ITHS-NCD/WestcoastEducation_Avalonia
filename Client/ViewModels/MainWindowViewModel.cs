@@ -1,4 +1,5 @@
 ﻿using System;
+using Client.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -6,28 +7,28 @@ namespace Client.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    private readonly CoursesViewModel _courseView = new();
-    private readonly StudentsViewModel _studentView = new();
-    private readonly TeachersViewModel _teacherView = new();
+    private readonly IPageViewFactory _pageViewFactory;
 
     [ObservableProperty]
     public partial ViewModelBase CurrentView { get; set; }
-    public MainWindowViewModel()
+
+    public MainWindowViewModel(IPageViewFactory pageViewFactory)
     {
-        CurrentView = _courseView;
+        _pageViewFactory = pageViewFactory;
+        GoToHome();
     }
 
     [RelayCommand]
-    public void GoToHome() => Console.WriteLine("Gå till hem");
+    public void GoToHome() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.Home);
 
     [RelayCommand]
-    public void GoToCourses() => CurrentView = _courseView;
+    public void GoToCourses() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.Courses);
 
     [RelayCommand]
-    public void GoToStudents() => CurrentView = _studentView;
+    public void GoToStudents() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.Students);
 
     [RelayCommand]
-    public void GoToTeachers() => CurrentView = _teacherView;
+    public void GoToTeachers() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.Teachers);
 
 
 

@@ -1,6 +1,8 @@
+using Client.Interfaces;
+
 namespace Client.Services;
 
-public class TeacherService
+public class TeacherService : ITeacherService
 {
 
 }
