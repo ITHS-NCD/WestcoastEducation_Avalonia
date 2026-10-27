@@ -10,7 +10,7 @@ public class Course
     public required string Length { get; set; }
     public required bool ClassRoom { get; set; }
     public string? Start { get; set; }
-    public string? Stop { get; set; }
+    public string? End { get; set; }
 
 
     public Course(string courseTitle)
