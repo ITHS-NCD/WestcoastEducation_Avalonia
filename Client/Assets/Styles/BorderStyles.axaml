@@ -1,0 +1,22 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20" Background="{DynamicResource BackgroundColor}">
+      <!-- Add Controls for Previewer Here -->
+       <Border Classes="popup">
+        <Label>Är du säker?</Label>
+       </Border>
+
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+
+  <Style Selector="Border.popup">
+    <Setter Property="Padding" Value="40"/>
+    <Setter Property="Background" Value="{DynamicResource BorderBackgroundColor}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}" />
+    <Setter Property="BorderThickness" Value="3" />
+    <Setter Property="CornerRadius" Value="15" />
+  </Style>
+</Styles>

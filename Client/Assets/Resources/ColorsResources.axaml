@@ -4,4 +4,8 @@
   <Color x:Key="PrimaryBackgroundColor">#243B53</Color>
   <Color x:Key="PrimaryForgroundColor">#F4F6F8</Color>
   <Color x:Key="PrimaryAccentColor">#3CBFA5</Color>
+  <Color x:Key="PrimaryBorderBackgroundColor">#020A3B</Color>
+  <Color x:Key="PrimaryBorderColor">#AEEFFA</Color>
+  <Color x:Key="PrimaryWarningColor">#FF2E2E</Color>
+  <Color x:Key="PrimaryButtonColor">#486581</Color>
 </ResourceDictionary>

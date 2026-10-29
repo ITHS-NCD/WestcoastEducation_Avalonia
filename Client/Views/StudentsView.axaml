@@ -19,7 +19,7 @@
               <Button Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToAddStudentCommand}" FontSize="16" Margin="20 10">
                 <StackPanel Orientation="Horizontal">
                   <Label FontFamily="{DynamicResource IconFont}" Content="&#xE3D4;" Margin="0 3 0 0" />
-                  <Label Content="Lägg till kurs" />
+                  <Label Content="Lägg till student" />
                 </StackPanel>
               </Button>
 
@@ -40,14 +40,27 @@
                         <Label Grid.Column="1" Content="{Binding LastName}" />
                         <Label Grid.Column="2" Content="{Binding Email}" />
                         <Label Grid.Column="3" Content="{Binding PhoneNumber}" />
-                        <Button Grid.Column="5" FontFamily="{DynamicResource IconFont}" Content="&#xEBC6;" />
-                        <Button Grid.Column="6" FontFamily="{DynamicResource IconFont}" Content="&#xE4A6;" />
+                        <Button Grid.Column="4" FontFamily="{DynamicResource IconFont}" Content="&#xEBC6;" />
+                        <Button Grid.Column="5" Command="{Binding $parent[UserControl].DataContext.DeleteCommand}" CommandParameter="{Binding Id}" FontFamily="{DynamicResource IconFont}" Content="&#xE4A6;" />
 
                       </Grid>
                     </DataTemplate>
                   </ItemsControl.ItemTemplate>
                 </ItemsControl>
               </ScrollViewer>
+
+              <Popup IsOpen="{Binding ShowDialog}" Placement="Center">
+                <Border Classes="popup" >
+                  <StackPanel>
+                      <Label Classes="popup" Content="Är du säker du vill ta bort studenten?" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="30">
+                      <Button Classes="popupCancel" Command="{Binding CancelCommand}">Nej</Button>
+                      <Button Classes="popupConfirm" Command="{Binding ConfirmCommand}">Ja</Button>
+
+                    </StackPanel>
+                  </StackPanel>
+                </Border>
+              </Popup>
 
             </StackPanel>
 </UserControl>

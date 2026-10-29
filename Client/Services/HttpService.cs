@@ -24,6 +24,8 @@ public class HttpService<T> : IHttpService<T> where T : class
 
     public HttpService()
     {
+        // var config = new ConfigurationBuilder().AddJsonFile("AppSettings.json").Build();
+
         var config = new ConfigurationBuilder().AddJsonFile("AppSettings.json").Build();
 
         var apikey = config.GetSection("Settings:ApiKey").Value!;

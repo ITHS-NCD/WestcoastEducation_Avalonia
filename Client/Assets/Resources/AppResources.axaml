@@ -4,5 +4,9 @@
   <SolidColorBrush x:Key="ForgroundColor" Color="{DynamicResource PrimaryForgroundColor}" />
   <SolidColorBrush x:Key="BackgroundColor" Color="{DynamicResource PrimaryBackgroundColor}" />
   <SolidColorBrush x:Key="AccentColor" Color="{DynamicResource PrimaryAccentColor}" />
+  <SolidColorBrush x:Key="BorderBackgroundColor" Color="{DynamicResource PrimaryBorderBackgroundColor}" />
+  <SolidColorBrush x:Key="BorderColor" Color="{DynamicResource PrimaryBorderColor}" />
+  <SolidColorBrush x:Key="WarningColor" Color="{DynamicResource PrimaryWarningColor}" />
+  <SolidColorBrush x:Key="ButtonColor" Color="{DynamicResource PrimaryButtonColor}" />
 
 </ResourceDictionary>

@@ -1,8 +1,17 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-    <Border Padding="20">
+    <Border Padding="20" Background="{DynamicResource BackgroundColor}">
       <!-- Add Controls for Previewer Here -->
+       <StackPanel>
+          <Button Classes="menu">Studenter</Button>
+         <StackPanel Orientation="Horizontal" Spacing="10">
+          <Button Classes="popupCancel">Nej</Button>
+          <Button Classes="popupConfirm">Ja</Button>
+         </StackPanel>
+
+
+       </StackPanel>
     </Border>
   </Design.PreviewWith>
 
@@ -14,8 +23,31 @@
    <Style Selector="Button.menu">
     <Setter Property="Foreground" Value="{DynamicResource ForgroundColor}" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
-    <Setter Property="Padding" Value="10 5" />
+    <Setter Property="Padding" Value="15 10" />
     <Setter Property="Margin" Value="3" />
+    <Setter Property="Background" Value="{DynamicResource ButtonColor}" />
+   </Style>
+
+   <Style Selector="Button.popupConfirm">
+    <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
+    <Setter Property="Foreground" Value="{DynamicResource WarningColor}" />
+    <Setter Property="FontSize" Value="20" />
+    <Setter Property="Padding" Value="30 20" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="BorderBrush" Value="{DynamicResource WarningColor}" />
+    <Setter Property="BorderThickness" Value="2" />
+    <Setter Property="CornerRadius" Value="12" />
+   </Style>
+
+   <Style Selector="Button.popupCancel">
+    <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForgroundColor}" />
+    <Setter Property="FontSize" Value="20" />
+    <Setter Property="Padding" Value="30 20" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ForgroundColor}" />
+    <Setter Property="BorderThickness" Value="2" />
+    <Setter Property="CornerRadius" Value="12" />
    </Style>
 </Styles>
 

@@ -22,7 +22,7 @@ public class StudentService : IStudentService
     public async Task<StudentRestDb> Find(string id)
     {
         HttpService<StudentRestDb> service = new();
-        var searchCriteria = "{\"id\"}:\"" + id + "\"";
+        var searchCriteria = "{\"id\":\"" + id + "\"}";
         return await service.Get("students", searchCriteria);
     }
 

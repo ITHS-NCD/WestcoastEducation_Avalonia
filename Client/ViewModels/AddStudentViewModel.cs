@@ -57,6 +57,19 @@ public partial class AddStudentViewModel : ViewModelBase
         };
 
         await _studentService.Add(student);
+
+        ClearData();
     }
 
+    private void ClearData()
+    {
+        PersonNumber = string.Empty;
+        FirstName = string.Empty;
+        LastName = string.Empty;
+        Email = string.Empty;
+        PhoneNumber = string.Empty;
+        AddressLine = string.Empty;
+        PostalCode = string.Empty;
+        City = string.Empty;
+    }
 }

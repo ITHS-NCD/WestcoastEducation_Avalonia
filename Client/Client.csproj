@@ -16,6 +16,7 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <AvaloniaResource Include="Assets\**\*" />
+    <AvaloniaXaml Remove="Assets\Styles\BorderStyles.axaml" />
     <AvaloniaXaml Remove="Assets\Styles\TextBoxStyles.axaml" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.14" />

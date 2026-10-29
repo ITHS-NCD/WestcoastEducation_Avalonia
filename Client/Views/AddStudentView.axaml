@@ -16,7 +16,7 @@
               <Label Classes="pageTitle" Content="{Binding PageTitle}" />
 
               <Label Classes="form" Content="Personnummer" />
-              <TextBox Classes="form" Text="{Binding FirstName}" />
+              <TextBox Classes="form" Text="{Binding PersonNumber}" />
 
               <Label Classes="form" Content="Förnamn" />
               <TextBox Classes="form" Text="{Binding FirstName}" />
