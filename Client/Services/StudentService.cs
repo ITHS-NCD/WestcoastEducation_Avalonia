@@ -13,9 +13,17 @@ public class StudentService : IStudentService
         await service.Post("students", student);
     }
 
-    public Task Delete(string id)
+    public async Task Delete(string id)
     {
-        throw new System.NotImplementedException();
+        HttpService<Student> service = new();
+        await service.Delete("students", id);
+    }
+
+    public async Task<StudentRestDb> Find(string id)
+    {
+        HttpService<StudentRestDb> service = new();
+        var searchCriteria = "{\"id\"}:\"" + id + "\"";
+        return await service.Get("students", searchCriteria);
     }
 
     public Task<List<Student>> List()

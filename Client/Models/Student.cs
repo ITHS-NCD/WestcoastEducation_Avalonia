@@ -1,11 +1,12 @@
-﻿using Client.Interfaces;
+﻿using System;
+using Client.Interfaces;
 using Client.Services;
 
 namespace Client.Models;
 
 public class Student : IPerson
 {
-
+    public string Id { get; set; } = Guid.NewGuid().ToString();
     public string PersonNumber { get; set; }
     public required string FirstName { get; set; }
     public required string LastName { get; set; }

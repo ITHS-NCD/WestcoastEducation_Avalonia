@@ -1,12 +1,62 @@
 using System;
+using System.Threading.Tasks;
 using Avalonia.Controls;
+using Avalonia.Platform.Storage;
+using Client.Interfaces;
+using Client.Models;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace Client.ViewModels;
 
-public class AddStudentViewModel : ViewModelBase
+public partial class AddStudentViewModel : ViewModelBase
 {
-    public AddStudentViewModel()
+    private readonly IStudentService _studentService;
+
+    [ObservableProperty]
+    public partial string PersonNumber { get; set; } = string.Empty;
+
+    [ObservableProperty]
+    public partial string FirstName { get; set; } = string.Empty;
+
+    [ObservableProperty]
+    public partial string LastName { get; set; } = string.Empty;
+
+    [ObservableProperty]
+    public partial string Email { get; set; } = string.Empty;
+
+    [ObservableProperty]
+    public partial string PhoneNumber { get; set; } = string.Empty;
+
+    [ObservableProperty]
+    public partial string AddressLine { get; set; } = string.Empty;
+
+    [ObservableProperty]
+    public partial string PostalCode { get; set; } = string.Empty;
+
+    [ObservableProperty]
+    public partial string City { get; set; } = string.Empty;
+
+
+    public AddStudentViewModel(IStudentService studentService)
     {
+        _studentService = studentService;
         PageTitle = "Lägg till en student";
     }
+
+    [RelayCommand]
+    private async Task Save()
+    {
+        Student student = new(PersonNumber)
+        {
+            FirstName = FirstName,
+            LastName = LastName,
+            Email = Email,
+            PhoneNumber = PhoneNumber,
+            Address = new Address { AddressLine = AddressLine, PostalCode = PostalCode, City = City }
+        };
+
+        await _studentService.Add(student);
+    }
+
 }

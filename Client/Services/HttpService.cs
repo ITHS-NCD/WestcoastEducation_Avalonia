@@ -38,9 +38,17 @@ public class HttpService<T> : IHttpService<T> where T : class
     }
 
 
-    public Task Delete(string resource, string id)
+    public async Task Delete(string resource, string id)
     {
-        throw new NotImplementedException();
+        try
+        {
+            await _httpClient.DeleteAsync($"{_baseUrl}/{resource}/{id}");
+        }
+        catch (Exception ex)
+        {
+
+            throw new Exception(ex.Message);
+        }
     }
 
     public async Task<List<T>> Get(string resource)
@@ -67,9 +75,31 @@ public class HttpService<T> : IHttpService<T> where T : class
         }
     }
 
-    public Task<T> Get(string resource, string predicate)
+    public async Task<T> Get(string resource, string predicate)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var response = await _httpClient.GetAsync($"{_baseUrl}/{resource}?q={predicate}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsStringAsync();
+                if (string.IsNullOrWhiteSpace(result))
+                {
+                    throw new Exception("Det fanns inte det du ville ha");
+                }
+
+                var data = JsonSerializer.Deserialize<List<T>>(result, _options)!;
+                return data[0];
+            }
+
+            throw new Exception("Något gick fel:" + response.StatusCode);
+        }
+        catch (Exception ex)
+        {
+
+            throw new Exception(ex.Message);
+        }
     }
 
     public async Task Post(string resource, T data)

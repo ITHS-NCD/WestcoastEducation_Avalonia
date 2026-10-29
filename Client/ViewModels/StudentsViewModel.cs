@@ -15,11 +15,14 @@ public partial class StudentsViewModel : ViewModelBase
     [ObservableProperty]
     public partial ObservableCollection<Student> Students { get; set; } = [];
 
+    //TODO: Ta bort
     public StudentsViewModel()
     {
         _studentService = new StudentService();
         PageTitle = "Våra elever";
     }
+    /***************************************************/
+
     public StudentsViewModel(IStudentService service)
     {
         _studentService = service;
