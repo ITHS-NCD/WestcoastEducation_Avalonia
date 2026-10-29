@@ -12,7 +12,7 @@ namespace Client.ViewModels;
 public partial class StudentsViewModel : ViewModelBase
 {
     private readonly IStudentService _studentService;
-    private string id;
+    private string id = string.Empty;
 
     [ObservableProperty]
     public partial bool ShowDialog { get; set; } = false;

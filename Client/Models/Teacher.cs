@@ -2,7 +2,7 @@
 
 namespace Client.Models;
 
-public class Teacher(string personNumber) : Student(personNumber)
+public class Teacher : Student
 {
     public string? Knowledge { get; set; }
     public string? Responsibility { get; set; }

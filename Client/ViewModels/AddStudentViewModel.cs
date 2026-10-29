@@ -47,8 +47,9 @@ public partial class AddStudentViewModel : ViewModelBase
     [RelayCommand]
     private async Task Save()
     {
-        Student student = new(PersonNumber)
+        Student student = new()
         {
+            PersonNumber = PersonNumber,
             FirstName = FirstName,
             LastName = LastName,
             Email = Email,
