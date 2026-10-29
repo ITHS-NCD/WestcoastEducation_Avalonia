@@ -12,7 +12,7 @@ public class PageViewFactory : IPageViewFactory
     {
         return pageEnum switch
         {
-            PageViewsEnum.Courses => new CoursesViewModel(),
+            PageViewsEnum.Courses => new CoursesViewModel(new CourseService()),
             PageViewsEnum.Home => new HomeViewModel(),
             PageViewsEnum.Students => new StudentsViewModel(new StudentService()),
             PageViewsEnum.Teachers => new TeachersViewModel(),
@@ -28,6 +28,7 @@ public class PageViewFactory : IPageViewFactory
         return pageEnum switch
         {
             PageViewsEnum.EditStudent => new EditStudentViewModel(new StudentService(), id),
+            PageViewsEnum.EditCourse => new EditCourseViewModel(new CourseService(), id),
             _ => throw new InvalidOperationException("Det fanns inte det du ville ha")
         };
     }

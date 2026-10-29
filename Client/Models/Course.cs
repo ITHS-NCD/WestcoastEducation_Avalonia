@@ -10,5 +10,6 @@ public class Course
     public required bool ClassRoom { get; set; }
     public string? Start { get; set; }
     public string? End { get; set; }
+    public string CourseType => ClassRoom ? "Klassrum" : "Distans";
 
 }

@@ -23,7 +23,7 @@
               </Button>
 
               <Border BorderBrush="White" BorderThickness="0 0 0 1" Padding="5 20 5 10">
-                <Grid ColumnDefinitions="200,200,200,200,*,60,60">
+                <Grid ColumnDefinitions="350,200,200,200,*,60,60">
                   <Label Content="Kurs titel" />
                   <Label Grid.Column="1" Content="Längd" />
                   <Label Grid.Column="2" Content="Start" />
@@ -35,27 +35,33 @@
                 <ItemsControl ItemsSource="{Binding Courses}" Margin="0 10 0 0">
                   <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                      <Grid ColumnDefinitions="200,200,200,200,*,60,60">
+                      <Grid ColumnDefinitions="350,200,200,200,*,60,60">
                         <Label Content="{Binding CourseTitle}" />
                         <Label Grid.Column="1" Content="{Binding Length}" />
                         <Label Grid.Column="2" Content="{Binding Start}" />
                         <Label Grid.Column="3" Content="{Binding End}" />
-                        <Label Grid.Column="4" Content="{Binding ClassRoom}" />
-                        <Button Grid.Column="5" FontFamily="{DynamicResource IconFont}" Content="&#xEBC6;" />
-                        <Button Grid.Column="6" FontFamily="{DynamicResource IconFont}" Content="&#xE4A6;" />
+                        <Label Grid.Column="4" Content="{Binding CourseType}" />
+                        <Button Grid.Column="5" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToEditCourseCommand}" CommandParameter="{Binding CourseNumber}" FontFamily="{DynamicResource IconFont}" Content="&#xEBC6;" />
+                        <Button Grid.Column="6" Command="{Binding $parent[UserControl].DataContext.DeleteCommand}" CommandParameter="{Binding CourseNumber}" FontFamily="{DynamicResource IconFont}" Content="&#xE4A6;" />
 
                       </Grid>
                     </DataTemplate>
                   </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                </ItemsControl>                
               </ScrollViewer>
 
+              <Popup IsOpen="{Binding ShowDialog}" Placement="Center">
+                <Border Classes="popup" >
+                  <StackPanel>
+                      <Label Classes="popup" Content="Är du säker du vill ta bort studenten?" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="30">
+                      <Button Classes="form" Command="{Binding CancelCommand}">Nej</Button>
+                      <Button Classes="form" Command="{Binding ConfirmCommand}">Ja</Button>
 
-
-
-
-
+                    </StackPanel>
+                  </StackPanel>
+                </Border>
+              </Popup>
 
             </StackPanel>
-
 </UserControl>

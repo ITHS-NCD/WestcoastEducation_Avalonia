@@ -46,6 +46,9 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     public void GoToEditStudent(string id) => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.EditStudent, id);
 
+    [RelayCommand]
+    public void GoToEditCourse(string id) => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.EditCourse, id);
+
 
 
 }

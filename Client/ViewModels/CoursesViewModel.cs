@@ -60,7 +60,6 @@ public partial class CoursesViewModel : ViewModelBase
         ShowDialog = false;
     }
 
-
     private async void Init() => await LoadCourses();
 
     private async Task LoadCourses()
