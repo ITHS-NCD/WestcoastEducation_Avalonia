@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Client.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+             x:Class="Client.Views.AddCourseView"
+             x:DataType="vm:AddCourseViewModel"
+             Background="{DynamicResource BackgroundColor}">
+
+             <Design.DataContext>
+              <vm:AddCourseViewModel />
+             </Design.DataContext>
+             
+             <StackPanel HorizontalAlignment="Center">
+              <Label Classes="pageTitle" Content="{Binding PageTitle}" />
+
+              <Label Classes="form" Content="Kurstitle" />
+              <TextBox Classes="form" Text="{Binding CourseTitle}" />
+
+              <Label Classes="form" Content="Längd" />
+              <TextBox Classes="form" Text="{Binding Length}" />
+              
+              <Label Classes="form" Content="Start på kursen" />
+              <TextBox Classes="form" Text="{Binding Start}" />
+              
+              <Label Classes="form" Content="Slut på kursen" />
+              <TextBox Classes="form" Text="{Binding End}" />
+              
+              <CheckBox RenderTransformOrigin="0,0" RenderTransform="scale(1.5)" FontSize="15" Foreground="{DynamicResource ForgroundColor}" Margin="10" >Kursen är i klassrum</CheckBox>
+
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40" Margin="30" >
+                <Button Classes="form" Command="{Binding SaveCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Label FontFamily="{DynamicResource IconFont}" Content="&#xE248;" />
+                        <Label Content="Spara" />
+                    </StackPanel>
+                </Button>
+                <Button Classes="warning" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToCoursesCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Label FontFamily="{DynamicResource IconFont}" Content="&#xE08A;" />
+                        <Label Content="Avbryt" />
+                    </StackPanel>
+                </Button>
+              </StackPanel>
+             </StackPanel>
+</UserControl>

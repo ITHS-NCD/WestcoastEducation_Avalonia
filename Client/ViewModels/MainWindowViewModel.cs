@@ -1,4 +1,5 @@
 ﻿using System;
+using Client.Factories;
 using Client.Interfaces;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -11,6 +12,12 @@ public partial class MainWindowViewModel : ViewModelBase
 
     [ObservableProperty]
     public partial ViewModelBase CurrentView { get; set; } = new();
+
+    public MainWindowViewModel()
+    {
+        _pageViewFactory = new PageViewFactory();
+        GoToHome();
+    }
 
     public MainWindowViewModel(IPageViewFactory pageViewFactory)
     {
@@ -34,7 +41,10 @@ public partial class MainWindowViewModel : ViewModelBase
     public void GoToAddStudent() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.AddStudent);
 
     [RelayCommand]
-    public void GoToEditStudent() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.EditStudent);
+    public void GoToAddCourse() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.AddCourse);
+
+    [RelayCommand]
+    public void GoToEditStudent(string id) => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.EditStudent, id);
 
 
 

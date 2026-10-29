@@ -54,8 +54,8 @@ public partial class StudentsViewModel : ViewModelBase
     private async Task Confirm()
     {
         var student = await _studentService.Find(id);
-        var _studentId = student._id;
-        await _studentService.Delete(_studentId);
+        var studentId = student._id;
+        await _studentService.Delete(studentId);
         ShowDialog = false;
     }
 

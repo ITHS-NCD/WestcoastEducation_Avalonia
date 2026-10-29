@@ -39,21 +39,19 @@
               <Label Classes="form" Content="Ort" />
               <TextBox Classes="form" Text="{Binding City}" />
 
-              <StackPanel Orientation="Horizontal">
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40" Margin="30" >
                 <Button Classes="form" Command="{Binding SaveCommand}">
                     <StackPanel Orientation="Horizontal" Spacing="4">
                         <Label FontFamily="{DynamicResource IconFont}" Content="&#xE248;" />
                         <Label Content="Spara" />
                     </StackPanel>
                 </Button>
-                <Button Classes="form" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToStudents}">
+                <Button Classes="warning" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToStudents}">
                     <StackPanel Orientation="Horizontal" Spacing="4">
                         <Label FontFamily="{DynamicResource IconFont}" Content="&#xE08A;" />
                         <Label Content="Avbryt" />
                     </StackPanel>
                 </Button>
               </StackPanel>
- 
- 
              </StackPanel>
 </UserControl>

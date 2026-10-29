@@ -17,6 +17,7 @@ public class PageViewFactory : IPageViewFactory
             PageViewsEnum.Students => new StudentsViewModel(new StudentService()),
             PageViewsEnum.Teachers => new TeachersViewModel(),
             PageViewsEnum.AddStudent => new AddStudentViewModel(new StudentService()),
+            PageViewsEnum.AddCourse => new AddCourseViewModel(new CourseService()),
 
             _ => throw new InvalidOperationException("Det fanns inte det du ville ha")
         };

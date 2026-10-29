@@ -7,7 +7,8 @@
         x:Class="Client.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="Client"
-        Foreground="{DynamicResource ForgroundColor}">
+        Foreground="{DynamicResource ForgroundColor}"
+        WindowState="Maximized">
 
         <Design.DataContext>
             <vm:MainWindowViewModel/>
@@ -16,48 +17,50 @@
         <Grid ColumnDefinitions="Auto,*" ShowGridLines="True" Background="{DynamicResource BackgroundColor}">
             <Border>
                 <StackPanel>
-                    <Grid RowDefinitions="*,100">
+                    <Grid RowDefinitions="*,Auto" ShowGridLines="True">
                             
                     <StackPanel Grid.Column="0" Spacing="8" Margin="20 10">
 
-                        <Label Content="WestCoast Education" FontSize="24" Padding="5" Margin="5" HorizontalAlignment="Center"  />
+                        <Label Content="Westcoast Education" FontSize="24" Padding="5" Margin="5" HorizontalAlignment="Center"  />
                         
                         <Button Classes="menu" Command="{Binding GoToHomeCommand}">
                             <StackPanel Orientation="Horizontal" Spacing="10">
-                                <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE2c2;" />
+                                <Label Classes="iconMenu" FontFamily="{DynamicResource IconFont}" Content="&#xE2c2;" />
                                 <Label Content="Hem" />
                             </StackPanel>
                         </Button>
 
                         <Button Classes="menu" Command="{Binding GoToCoursesCommand}">
                             <StackPanel Orientation="Horizontal" Spacing="10" >
-                                <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE2c4;" />
+                                <Label Classes="iconMenu" FontFamily="{DynamicResource IconFont}" Content="&#xE2c4;" />
                                 <Label Content="Kurser" />
                             </StackPanel>
                         </Button>
 
                         <Button Classes="menu" Command="{Binding GoToStudentsCommand}">
                             <StackPanel Orientation="Horizontal">
-                                <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE73E;" />
+                                <Label Classes="iconMenu" FontFamily="{DynamicResource IconFont}" Content="&#xE73E;" />
                                 <Label Content="Elever" />
                             </StackPanel>
                         </Button>
 
                         <Button Classes="menu" Command="{Binding GoToTeachersCommand}">
                             <StackPanel Orientation="Horizontal">
-                                <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE73E;" />
+                                <Label Classes="iconMenu" FontFamily="{DynamicResource IconFont}" Content="&#xE73E;" />
                                 <Label Content="Lärare" />
                             </StackPanel>
                         </Button>
 
                     </StackPanel>
-
-                    <Button Classes="menu" Grid.Row="1" VerticalAlignment="Bottom" Margin="10 20">
-                            <StackPanel Orientation="Horizontal">
-                                <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE270;" />
-                                <Label Content="Inställningar" />
-                            </StackPanel>
-                        </Button>
+                    <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+                        <Button Classes="menu" Grid.Row="1" VerticalAlignment="Bottom" Margin="20 10" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE270;" />
+                                    <Label Content="Inställningar" />
+                                </StackPanel>
+                            </Button>
+                        
+                    </StackPanel>
 
                     </Grid>
                 </StackPanel>

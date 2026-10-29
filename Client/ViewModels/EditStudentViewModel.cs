@@ -32,17 +32,26 @@ public partial class EditStudentViewModel : ViewModelBase
     public partial Address Address { get; set; } = new() { AddressLine = string.Empty, PostalCode = string.Empty, City = string.Empty };
 
 
+    public EditStudentViewModel()
+    {
+        PageTitle = "Uppdatera student";
+    }
+
     public EditStudentViewModel(IStudentService studentService, string studentId)
     {
         _studentService = studentService;
         PageTitle = "Uppdatera: " + FirstName + " " + LastName;
         _studentId = studentId;
+        Init();
+    }
 
+    private async void Init()
+    {
+        await GetStudent();
     }
 
 
-
-    private async void GetStudent()
+    private async Task GetStudent()
     {
         try
         {

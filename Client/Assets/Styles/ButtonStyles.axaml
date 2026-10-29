@@ -6,8 +6,8 @@
        <StackPanel>
           <Button Classes="menu">Studenter</Button>
          <StackPanel Orientation="Horizontal" Spacing="10">
-          <Button Classes="popupCancel">Nej</Button>
-          <Button Classes="popupConfirm">Ja</Button>
+          <Button Classes="warning">Nej</Button>
+          <Button Classes="form">Ja</Button>
          </StackPanel>
 
 
@@ -28,7 +28,7 @@
     <Setter Property="Background" Value="{DynamicResource ButtonColor}" />
    </Style>
 
-   <Style Selector="Button.popupConfirm">
+   <Style Selector="Button.warning">
     <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
     <Setter Property="Foreground" Value="{DynamicResource WarningColor}" />
     <Setter Property="FontSize" Value="20" />
@@ -39,13 +39,13 @@
     <Setter Property="CornerRadius" Value="12" />
    </Style>
 
-   <Style Selector="Button.popupCancel">
+   <Style Selector="Button.form">
     <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
     <Setter Property="Foreground" Value="{DynamicResource ForgroundColor}" />
     <Setter Property="FontSize" Value="20" />
     <Setter Property="Padding" Value="30 20" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
-    <Setter Property="BorderBrush" Value="{DynamicResource ForgroundColor}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
     <Setter Property="BorderThickness" Value="2" />
     <Setter Property="CornerRadius" Value="12" />
    </Style>
