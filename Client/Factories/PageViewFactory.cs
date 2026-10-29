@@ -17,12 +17,17 @@ public class PageViewFactory : IPageViewFactory
             PageViewsEnum.Students => new StudentsViewModel(new StudentService()),
             PageViewsEnum.Teachers => new TeachersViewModel(),
             PageViewsEnum.AddStudent => new AddStudentViewModel(new StudentService()),
+
             _ => throw new InvalidOperationException("Det fanns inte det du ville ha")
         };
     }
 
-    public ViewModelBase LoadPageViewModel(PageViewsEnum pageEnum, string itemNumber)
+    public ViewModelBase LoadPageViewModel(PageViewsEnum pageEnum, string id)
     {
-        throw new NotImplementedException();
+        return pageEnum switch
+        {
+            PageViewsEnum.EditStudent => new EditStudentViewModel(new StudentService(), id),
+            _ => throw new InvalidOperationException("Det fanns inte det du ville ha")
+        };
     }
 }

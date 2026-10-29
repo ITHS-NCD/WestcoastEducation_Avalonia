@@ -10,7 +10,7 @@ public partial class MainWindowViewModel : ViewModelBase
     private readonly IPageViewFactory _pageViewFactory;
 
     [ObservableProperty]
-    public partial ViewModelBase CurrentView { get; set; }
+    public partial ViewModelBase CurrentView { get; set; } = new();
 
     public MainWindowViewModel(IPageViewFactory pageViewFactory)
     {
@@ -32,6 +32,9 @@ public partial class MainWindowViewModel : ViewModelBase
 
     [RelayCommand]
     public void GoToAddStudent() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.AddStudent);
+
+    [RelayCommand]
+    public void GoToEditStudent() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.EditStudent);
 
 
 
