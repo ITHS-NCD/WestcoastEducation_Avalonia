@@ -1,0 +1,29 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20" Background="{DynamicResource BackgroundColor}">
+      <!-- Add Controls for Previewer Here -->
+       <StackPanel>
+        <Label Content="Test text" />
+        <Label Classes="pageTitle" Content="Westcoast Education" />
+        <Label Classes="form" Content="Förnamn"/>
+       </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+   <Style Selector="Label">
+      <Setter Property="Foreground" Value="{DynamicResource ForgroundColor}" />
+   </Style>
+
+   <Style Selector="Label.pageTitle">
+    <Setter Property="FontSize" Value="36" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+    <Setter Property="Foreground" Value="{DynamicResource ForgroundColor}" />
+    <Setter Property="Padding" Value="30" />
+   </Style>
+
+   <Style Selector="Label.form">
+      <Setter Property="FontSize" Value="16" />
+   </Style>
+</Styles>

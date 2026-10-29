@@ -7,9 +7,10 @@ namespace Client.Services;
 
 public class StudentService : IStudentService
 {
-    public Task Add(Student student)
+    public async Task Add(Student student)
     {
-        throw new System.NotImplementedException();
+        HttpService<Student> service = new();
+        await service.Post("students", student);
     }
 
     public Task Delete(string id)
@@ -24,8 +25,9 @@ public class StudentService : IStudentService
         return students;
     }
 
-    public Task Update(Student student, string _objektId)
+    public async Task Update(Student student, string _objectId)
     {
-        throw new System.NotImplementedException();
+        HttpService<Student> service = new();
+        await service.Put("students", student, _objectId);
     }
 }

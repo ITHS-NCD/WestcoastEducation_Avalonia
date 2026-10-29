@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Client.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Client.Views.AddStudentView"
+             x:DataType="vm:AddStudentViewModel"
+             Background="{DynamicResource BackgroundColor}">
+
+             <Design.DataContext>
+              <vm:AddStudentViewModel/>
+             </Design.DataContext>
+
+             <StackPanel HorizontalAlignment="Center">
+              <Label Classes="pageTitle" Content="{Binding PageTitle}" />
+
+              <Label Classes="form" Content="Förnamn" />
+              <TextBox Classes="form" />
+ 
+              <Label Classes="form" Content="Efternamn" />
+              <TextBox Classes="form" />
+ 
+              <Label Classes="form" Content="E-post" />
+              <TextBox Classes="form" />
+ 
+              <Label Classes="form" Content="Telefon nummer" />
+              <TextBox Classes="form" />
+ 
+              <Label Classes="form" Content="Adress" />
+              <TextBox Classes="form" />
+ 
+              <Label Classes="form" Content="Postkod" />
+              <TextBox Classes="form" />
+ 
+              <Label Classes="form" Content="Ort" />
+              <TextBox Classes="form" />
+ 
+ 
+             </StackPanel>
+</UserControl>

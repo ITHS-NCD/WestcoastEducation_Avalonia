@@ -6,18 +6,19 @@
              xmlns:vm="using:Client.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Client.Views.StudentsView"
-             x:DataType="vm:StudentsViewModel">
+             x:DataType="vm:StudentsViewModel"
+             Background="{DynamicResource BackgroundColor}">
 
              <Design.DataContext>
               <vm:StudentsViewModel/>
              </Design.DataContext>
 
             <StackPanel>
-              <Label Content="{Binding PageTitle}" FontSize="24" />
+              <Label Classes="pageTitle" Content="{Binding PageTitle}" />
 
-              <Button FontSize="16">
-                <StackPanel>
-                  <Label FontFamily="{DynamicResource IconFont}" Content="&#xE3D4;" />
+              <Button Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToAddStudentCommand}" FontSize="16" Margin="20 10">
+                <StackPanel Orientation="Horizontal">
+                  <Label FontFamily="{DynamicResource IconFont}" Content="&#xE3D4;" Margin="0 3 0 0" />
                   <Label Content="Lägg till kurs" />
                 </StackPanel>
               </Button>

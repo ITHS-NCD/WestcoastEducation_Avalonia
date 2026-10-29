@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Avalonia.Controls.Platform;
 using Client.Interfaces;
 using Microsoft.Extensions.Configuration;
 
@@ -35,6 +36,7 @@ public class HttpService<T> : IHttpService<T> where T : class
         _httpClient.DefaultRequestHeaders.Add("Cache-Control", "none");
         _httpClient.DefaultRequestHeaders.Add("x-apikey", apikey);
     }
+
 
     public Task Delete(string resource, string id)
     {
@@ -70,13 +72,38 @@ public class HttpService<T> : IHttpService<T> where T : class
         throw new NotImplementedException();
     }
 
-    public Task Post(string resource, T data)
+    public async Task Post(string resource, T data)
     {
-        throw new NotImplementedException();
+        try
+        {
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            await _httpClient.PostAsJsonAsync<T>($"{_baseUrl}/{resource}", data);
+        }
+        catch (HttpRequestException ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
 
-    public Task Put(string resource, T data, string objectId)
+    public async Task Put(string resource, T data, string objectId)
     {
-        throw new NotImplementedException();
+        try
+        {
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("spplication/json"));
+            await _httpClient.PutAsJsonAsync($"{_baseUrl}/{resource}/{objectId}", data);
+        }
+        catch (HttpRequestException ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
     }
 }

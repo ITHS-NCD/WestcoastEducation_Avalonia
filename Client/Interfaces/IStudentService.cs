@@ -10,5 +10,5 @@ public interface IStudentService
     Task Add(Student student);
     Task Delete(string id);
     Task<List<Student>> List();
-    Task Update(Student student, string _objektId);
+    Task Update(Student student, string _objectId);
 }

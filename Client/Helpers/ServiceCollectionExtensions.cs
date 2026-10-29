@@ -17,6 +17,7 @@ public static class ServiceCollectionExtensions
         collention.AddTransient<StudentsViewModel>();
         collention.AddTransient<TeachersViewModel>();
         collention.AddTransient<HomeViewModel>();
+        collention.AddTransient<AddStudentViewModel>();
         collention.AddTransient<ICourseService, CourseService>();
         collention.AddTransient<IStudentService, StudentService>();
         collention.AddTransient<ITeacherService, TeacherService>();
