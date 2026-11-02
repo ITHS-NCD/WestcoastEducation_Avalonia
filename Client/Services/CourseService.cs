@@ -34,9 +34,9 @@ public class CourseService : ICourseService
         return courses;
     }
 
-    public async Task Update(Course course, string _objectId)
+    public async Task Update(Course course, string objectId)
     {
         HttpService<Course> service = new();
-        await service.Put("courses", course, _objectId);
+        await service.Put("courses", course, objectId);
     }
 }

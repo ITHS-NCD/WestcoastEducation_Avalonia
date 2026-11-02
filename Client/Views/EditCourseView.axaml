@@ -35,7 +35,7 @@
                         <Label Content="Spara" />
                     </StackPanel>
                 </Button>
-                <Button Classes="warning" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToStudents}">
+                <Button Classes="warning" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToCourses}">
                     <StackPanel Orientation="Horizontal" Spacing="4">
                         <Label FontFamily="{DynamicResource IconFont}" Content="&#xE08A;" />
                         <Label Content="Avbryt" />

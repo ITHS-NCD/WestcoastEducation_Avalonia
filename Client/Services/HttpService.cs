@@ -11,7 +11,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Client.Services;
 
-public class HttpService<T> : IHttpService<T> where T : class
+public class HttpService<T> : IDisposable, IHttpService<T> where T : class
 {
     private readonly HttpClient _httpClient;
     private readonly string _baseUrl = string.Empty;
@@ -38,7 +38,6 @@ public class HttpService<T> : IHttpService<T> where T : class
         _httpClient.DefaultRequestHeaders.Add("Cache-Control", "none");
         _httpClient.DefaultRequestHeaders.Add("x-apikey", apikey);
     }
-
 
     public async Task Delete(string resource, string id)
     {
@@ -137,5 +136,11 @@ public class HttpService<T> : IHttpService<T> where T : class
         {
             throw new Exception(ex.Message);
         }
+    }
+
+    public void Dispose()
+    {
+        _httpClient.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

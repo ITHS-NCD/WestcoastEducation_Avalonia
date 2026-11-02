@@ -1,6 +1,6 @@
 ﻿namespace Client.Models;
 
-public class Address
+public record Address
 {
     public required string AddressLine { get; set; }
     public required string PostalCode { get; set; }

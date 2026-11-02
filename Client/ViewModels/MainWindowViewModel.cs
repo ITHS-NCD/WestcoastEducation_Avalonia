@@ -44,10 +44,16 @@ public partial class MainWindowViewModel : ViewModelBase
     public void GoToAddCourse() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.AddCourse);
 
     [RelayCommand]
+    public void GoToAddTeacher() => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.AddTeacher);
+
+    [RelayCommand]
     public void GoToEditStudent(string id) => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.EditStudent, id);
 
     [RelayCommand]
     public void GoToEditCourse(string id) => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.EditCourse, id);
+
+    [RelayCommand]
+    public void GoToEditTeacher(string id) => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.EditTeacher, id);
 
 
 

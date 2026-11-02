@@ -1,11 +1,10 @@
-﻿using Client.Services;
+﻿using System.Collections.Generic;
+using Client.Services;
 
 namespace Client.Models;
 
-public class Teacher : Student
+public record Teacher : Student
 {
-    public string? Knowledge { get; set; }
-    public string? Responsibility { get; set; }
-
-
+    public List<string>? Knowledge { get; set; }
+    public List<Course>? Courses { get; set; }
 }

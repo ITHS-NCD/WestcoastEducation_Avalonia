@@ -56,6 +56,7 @@ public partial class StudentsViewModel : ViewModelBase
         var student = await _studentService.Find(id);
         var studentId = student._id;
         await _studentService.Delete(studentId);
+        Init();
         ShowDialog = false;
     }
 
@@ -65,9 +66,9 @@ public partial class StudentsViewModel : ViewModelBase
         ShowDialog = false;
     }
 
-    private async void Init() => await LoadProducts();
+    private async void Init() => await LoadStudents();
 
-    private async Task LoadProducts()
+    private async Task LoadStudents()
     {
         try
         {

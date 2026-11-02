@@ -33,9 +33,9 @@ public class StudentService : IStudentService
         return students;
     }
 
-    public async Task Update(Student student, string _objectId)
+    public async Task Update(Student student, string objectId)
     {
         HttpService<Student> service = new();
-        await service.Put("students", student, _objectId);
+        await service.Put("students", student, objectId);
     }
 }

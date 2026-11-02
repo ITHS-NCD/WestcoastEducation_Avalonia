@@ -1,0 +1,58 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Client.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Client.Views.EditTeacherView"
+             x:DataType="vm:EditTeacherViewModel">
+
+             <Design.DataContext>
+              <vm:EditTeacherViewModel/>
+             </Design.DataContext>
+
+             <StackPanel HorizontalAlignment="Center">
+              <Label Classes="pageTitle" Content="{Binding PageTitle}" />
+
+              <Label Classes="form" Content="Personnummer" />
+              <TextBox Classes="form" Text="{Binding PersonNumber}" />
+
+              <Label Classes="form" Content="Förnamn" />
+              <TextBox Classes="form" Text="{Binding FirstName}" />
+ 
+              <Label Classes="form" Content="Efternamn" />
+              <TextBox Classes="form" Text="{Binding LastName}" />
+ 
+              <Label Classes="form" Content="E-post" />
+              <TextBox Classes="form" Text="{Binding Email}" />
+ 
+              <Label Classes="form" Content="Telefon nummer" />
+              <TextBox Classes="form" Text="{Binding PhoneNumber}" />
+ 
+              <Label Classes="form" Content="Adress" />
+              <TextBox Classes="form" Text="{Binding Address.AddressLine}" />
+ 
+              <Label Classes="form" Content="Postkod" />
+              <TextBox Classes="form" Text="{Binding Address.PostalCode}" />
+ 
+              <Label Classes="form" Content="Ort" />
+              <TextBox Classes="form" Text="{Binding Address.City}" />
+
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30" Spacing="40">
+                <Button Classes="form" Command="{Binding Save}">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Label FontFamily="{DynamicResource IconFont}" Content="&#xE248;" />
+                        <Label Content="Spara" />
+                    </StackPanel>
+                </Button>
+                <Button Classes="warning" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToTeachers}">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Label FontFamily="{DynamicResource IconFont}" Content="&#xE08A;" />
+                        <Label Content="Avbryt" />
+                    </StackPanel>
+                </Button>
+              </StackPanel>
+ 
+ 
+             </StackPanel>
+</UserControl>

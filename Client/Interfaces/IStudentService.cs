@@ -11,5 +11,5 @@ public interface IStudentService
     Task Delete(string id);
     Task<StudentRestDb> Find(string id);
     Task<List<Student>> List();
-    Task Update(Student student, string _objectId);
+    Task Update(Student student, string objectId);
 }
