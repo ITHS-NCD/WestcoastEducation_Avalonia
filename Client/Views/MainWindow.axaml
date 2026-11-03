@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:Client.ViewModels"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="550"
         x:Class="Client.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="Client"
@@ -16,9 +16,7 @@
 
         <Grid ColumnDefinitions="Auto,*" ShowGridLines="True" Background="{DynamicResource BackgroundColor}">
             <Border>
-                <StackPanel>
-                    <Grid RowDefinitions="*,Auto" ShowGridLines="True">
-                            
+                <Grid RowDefinitions="*,auto" ShowGridLines="False">
                     <StackPanel Grid.Column="0" Spacing="8" Margin="20 10">
 
                         <Label Content="Westcoast Education" FontSize="24" Padding="5" Margin="5" HorizontalAlignment="Center"  />
@@ -52,18 +50,13 @@
                         </Button>
 
                     </StackPanel>
-                    <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
-                        <Button Classes="menu" Grid.Row="1" VerticalAlignment="Bottom" Margin="20 10" >
-                                <StackPanel Orientation="Horizontal">
-                                    <Label FontFamily="{DynamicResource IconFont}" FontSize="16" Content="&#xE270;" />
-                                    <Label Content="Inställningar" />
-                                </StackPanel>
-                            </Button>
-                        
-                    </StackPanel>
-
-                    </Grid>
-                </StackPanel>
+                    <Button Classes="menu" Grid.Row="1" VerticalAlignment="Bottom" Margin="20 10" >
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontFamily="{DynamicResource IconFont}" FontSize="24" Content="&#xE270;" Padding="0 4 3 0" />
+                                <Label Content="Inställningar" />
+                            </StackPanel>
+                        </Button>
+                </Grid>
             </Border>
             <UserControl Grid.Column="1" Padding="24" Content="{Binding CurrentView}" />
         </Grid>

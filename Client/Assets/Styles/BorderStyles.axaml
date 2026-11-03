@@ -3,9 +3,17 @@
   <Design.PreviewWith>
     <Border Padding="20" Background="{DynamicResource BackgroundColor}">
       <!-- Add Controls for Previewer Here -->
-       <Border Classes="popup">
-        <Label>Är du säker?</Label>
-       </Border>
+       <StackPanel Spacing="20">
+         <Border Classes="popup">
+          <Label>Är du säker?</Label>
+         </Border>
+
+         <Border Classes="list">
+          <Label>Hej</Label>
+         </Border>
+
+       </StackPanel>
+
 
     </Border>
   </Design.PreviewWith>
@@ -19,4 +27,13 @@
     <Setter Property="BorderThickness" Value="3" />
     <Setter Property="CornerRadius" Value="15" />
   </Style>
+
+  <Style Selector="Border.list">
+    <Setter Property="Background" Value="{DynamicResource SecBackgroundColor}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource SecBorderColor}" />
+    <Setter Property="BorderThickness" Value="2" />
+    <Setter Property="CornerRadius" Value="5" />
+    <Setter Property="Padding" Value="5" />
+  </Style>
+
 </Styles>

@@ -31,10 +31,10 @@ public partial class EditCourseViewModel : ViewModelBase
     [ObservableProperty]
     public partial string? End { get; set; } = string.Empty;
 
-    public EditCourseViewModel()
-    {
-        PageTitle = "Uppdatera kurs";
-    }
+    // public EditCourseViewModel()
+    // {
+    //     PageTitle = "Uppdatera kurs";
+    // }
 
     public EditCourseViewModel(ICourseService courseService, string courseId)
     {

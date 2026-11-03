@@ -52,6 +52,8 @@ public partial class CoursesViewModel : ViewModelBase
         var course = await _courseService.Find(_courseId);
         var courseId = course._id;
         await _courseService.Delete(courseId);
+        Init();
+        ShowDialog = false;
     }
 
     [RelayCommand]

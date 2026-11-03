@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Client.Interfaces;
 using Client.Models;
+using Client.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -13,11 +15,22 @@ public partial class TeachersViewModel : ViewModelBase
     private readonly ITeacherService _teacherService;
     private string id = string.Empty;
 
+
     [ObservableProperty]
     public partial bool ShowDialog { get; set; } = false;
 
     [ObservableProperty]
+    public partial bool ShowDialogKnowledge { get; set; } = false;
+
+    [ObservableProperty]
     public partial ObservableCollection<Teacher> Teachers { get; set; } = [];
+
+    public TeachersViewModel()
+    {
+        _teacherService = new TeacherService();
+        PageTitle = "Våra Lärare";
+        Init();
+    }
 
     public TeachersViewModel(ITeacherService teacherService)
     {
@@ -40,6 +53,7 @@ public partial class TeachersViewModel : ViewModelBase
             throw new Exception(ex.Message);
         }
     }
+
 
     [RelayCommand]
     public async Task Delete(string identification)
@@ -69,5 +83,26 @@ public partial class TeachersViewModel : ViewModelBase
     private void Cancel()
     {
         ShowDialog = false;
+        ShowDialogKnowledge = false;
+    }
+
+    [RelayCommand]
+    private async Task DeleteKnowledge(string identification)
+    {
+        id = identification;
+        ShowDialogKnowledge = true;
+    }
+
+    [RelayCommand]
+    private async Task ConfirmKnowledge(string knowledgeId)
+    {
+        var teacher = await _teacherService.Find(id);
+        var teacherId = teacher._id;
+
+        teacher.Knowledge!.Remove(knowledgeId);
+
+        await _teacherService.Update(teacher, teacherId);
+        Init();
+        ShowDialogKnowledge = false;
     }
 }

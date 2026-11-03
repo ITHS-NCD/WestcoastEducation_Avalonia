@@ -8,5 +8,7 @@
   <SolidColorBrush x:Key="BorderColor" Color="{DynamicResource PrimaryBorderColor}" />
   <SolidColorBrush x:Key="WarningColor" Color="{DynamicResource PrimaryWarningColor}" />
   <SolidColorBrush x:Key="ButtonColor" Color="{DynamicResource PrimaryButtonColor}" />
+  <SolidColorBrush x:Key="SecBackgroundColor" Color="{DynamicResource SecondaryBackgroundColor}" />
+  <SolidColorBrush x:Key="SecBorderColor" Color="{DynamicResource SecondaryBorderColor}" />
 
 </ResourceDictionary>

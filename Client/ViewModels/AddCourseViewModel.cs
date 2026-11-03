@@ -12,9 +12,6 @@ public partial class AddCourseViewModel : ViewModelBase
     private ICourseService _courseService { get; set; }
 
     [ObservableProperty]
-    public partial string CourseNumber { get; set; } = string.Empty;
-
-    [ObservableProperty]
     public partial string CourseTitle { get; set; } = string.Empty;
     [ObservableProperty]
     public partial string Length { get; set; } = string.Empty;
@@ -42,7 +39,6 @@ public partial class AddCourseViewModel : ViewModelBase
     {
         Course course = new()
         {
-            CourseNumber = CourseNumber,
             CourseTitle = CourseTitle,
             Length = Length,
             ClassRoom = ClassRoom,
@@ -57,7 +53,6 @@ public partial class AddCourseViewModel : ViewModelBase
 
     private void ClearData()
     {
-        CourseNumber = string.Empty;
         CourseTitle = string.Empty;
         Length = string.Empty;
         Start = string.Empty;

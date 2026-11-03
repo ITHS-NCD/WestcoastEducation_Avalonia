@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Client.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Client.Views.AddKnowledgeView"
+             x:DataType="vm:AddKnowledgeViewModel">
+
+             <Design.DataContext>
+              <vm:AddKnowledgeViewModel/>
+             </Design.DataContext>
+
+             <StackPanel HorizontalAlignment="Center">
+              <Label Classes="pageTitle" Content="{Binding PageTitle}" />
+
+              <Label Classes="form" Content="Kunskapsområde" />
+              <TextBox Classes="form" Text="{Binding KnowledgeArea}" />
+
+              <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="40" Margin="30" >
+                <Button Classes="form" Command="{Binding SaveCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Label FontFamily="{DynamicResource IconFont}" Content="&#xE248;" />
+                        <Label Content="Spara" />
+                    </StackPanel>
+                </Button>
+                <Button Classes="warning" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToTeachersCommand}">
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Label FontFamily="{DynamicResource IconFont}" Content="&#xE08A;" />
+                        <Label Content="Avbryt" />
+                    </StackPanel>
+                </Button>
+              </StackPanel>
+
+              <Popup IsOpen="{Binding ShowDialog}" Placement="Center">
+                <Border Classes="popup" >
+                  <StackPanel>
+                      <Label Classes="popup" Content="Du måste skriva in ett kunskapområde" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="30">
+                      <Button Classes="form" Command="{Binding OkCommand}" FontFamily="{DynamicResource IconFont}" Content="&#xEBA6;" />
+                    </StackPanel>
+                  </StackPanel>
+                </Border>
+              </Popup>
+
+             </StackPanel>
+</UserControl>

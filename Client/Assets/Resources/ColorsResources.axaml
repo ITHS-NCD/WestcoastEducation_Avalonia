@@ -8,4 +8,6 @@
   <Color x:Key="PrimaryBorderColor">#AEEFFA</Color>
   <Color x:Key="PrimaryWarningColor">#FF2E2E</Color>
   <Color x:Key="PrimaryButtonColor">#486581</Color>
+  <Color x:Key="SecondaryBackgroundColor">#3C556D</Color>
+  <Color x:Key="SecondaryBorderColor">#283F4D</Color>
 </ResourceDictionary>
