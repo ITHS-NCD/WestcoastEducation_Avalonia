@@ -23,7 +23,7 @@
    </Style>
 
    <Style Selector="Label.pageTitle">
-    <Setter Property="FontSize" Value="36" />
+    <Setter Property="FontSize" Value="64" />
     <Setter Property="HorizontalAlignment" Value="Center" />
     <Setter Property="Foreground" Value="{DynamicResource ForgroundColor}" />
     <Setter Property="Padding" Value="30" />

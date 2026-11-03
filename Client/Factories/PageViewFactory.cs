@@ -33,6 +33,7 @@ public class PageViewFactory : IPageViewFactory
             PageViewsEnum.EditCourse => new EditCourseViewModel(new CourseService(), id),
             PageViewsEnum.EditTeacher => new EditTeacherViewModel(new TeacherService(), id),
             PageViewsEnum.AddKnowledge => new AddKnowledgeViewModel(new TeacherService(), id),
+            PageViewsEnum.Knowledge => new KnowledgeViewModel(new TeacherService(), id),
             _ => throw new InvalidOperationException("Det fanns inte det du ville ha")
         };
     }

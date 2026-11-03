@@ -9,6 +9,7 @@ public enum PageViewsEnum
     EditCourse,
     EditTeacher,
     EditStudent,
+    Knowledge,
     Home,
     Courses,
     Students,

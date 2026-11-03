@@ -17,10 +17,10 @@ public partial class TeachersViewModel : ViewModelBase
 
 
     [ObservableProperty]
-    public partial bool ShowDialog { get; set; } = false;
+    public partial bool ShowDialog { get; set; }
 
     [ObservableProperty]
-    public partial bool ShowDialogKnowledge { get; set; } = false;
+    public partial bool ShowDialogKnowledge { get; set; }
 
     [ObservableProperty]
     public partial ObservableCollection<Teacher> Teachers { get; set; } = [];

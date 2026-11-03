@@ -15,6 +15,7 @@
         <StyleInclude Source="Assets/Styles/LabelStyles.axaml" />
         <StyleInclude Source="Assets/Styles/TextBoxStyles.axaml" />
         <StyleInclude Source="Assets/Styles/BorderStyles.axaml" />
+        <StyleInclude Source="Assets/Styles/ItemsControlStyles.axaml" />
     </Application.Styles>
 
 

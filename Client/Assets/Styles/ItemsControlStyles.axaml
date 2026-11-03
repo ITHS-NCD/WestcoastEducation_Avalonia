@@ -1,0 +1,16 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20" Background="{DynamicResource BackgroundColor}">
+      <!-- Add Controls for Previewer Here -->
+       
+    </Border>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+   <Style Selector="ItemsControl">
+    <Setter Property="FontSize" Value="18" />
+    <Setter Property="Margin" Value="20 0 20 20" />
+    <Setter Property="Padding" Value="5" />
+   </Style>
+</Styles>
