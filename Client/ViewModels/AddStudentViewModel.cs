@@ -37,7 +37,6 @@ public partial class AddStudentViewModel : ViewModelBase
     [ObservableProperty]
     public partial string City { get; set; } = string.Empty;
 
-
     public AddStudentViewModel(IStudentService studentService)
     {
         _studentService = studentService;

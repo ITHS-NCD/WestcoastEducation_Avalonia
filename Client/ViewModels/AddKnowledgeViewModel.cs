@@ -18,7 +18,6 @@ public partial class AddKnowledgeViewModel : ViewModelBase
     [ObservableProperty]
     public partial string KnowledgeArea { get; set; } = string.Empty;
 
-
     public AddKnowledgeViewModel(ITeacherService teacherService, string id)
     {
         _teacherService = teacherService;

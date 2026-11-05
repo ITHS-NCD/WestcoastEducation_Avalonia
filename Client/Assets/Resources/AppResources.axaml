@@ -10,5 +10,8 @@
   <SolidColorBrush x:Key="ButtonColor" Color="{DynamicResource PrimaryButtonColor}" />
   <SolidColorBrush x:Key="SecBackgroundColor" Color="{DynamicResource SecondaryBackgroundColor}" />
   <SolidColorBrush x:Key="SecBorderColor" Color="{DynamicResource SecondaryBorderColor}" />
+  <SolidColorBrush x:Key="WhiteColor" Color="{DynamicResource PrimaryWhiteColor}" />
+  <SolidColorBrush x:Key="TextBoxForgroundColor" Color="{DynamicResource PrimaryTextBoxForgroundColor}" />
+  <SolidColorBrush x:Key="TextBoxBorderColor" Color="{DynamicResource PrimaryTextBoxBorderColor}" />
 
 </ResourceDictionary>

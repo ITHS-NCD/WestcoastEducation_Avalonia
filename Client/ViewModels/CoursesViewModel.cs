@@ -19,12 +19,6 @@ public partial class CoursesViewModel : ViewModelBase
     [ObservableProperty]
     public partial ObservableCollection<Course> Courses { get; set; } = [];
 
-    public CoursesViewModel()
-    {
-        _courseService = new CourseService();
-        PageTitle = "Våra kurser";
-    }
-
     public CoursesViewModel(ICourseService courseService)
     {
         _courseService = courseService;

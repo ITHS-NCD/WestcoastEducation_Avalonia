@@ -11,7 +11,7 @@
               <vm:EditCourseViewModel />
              </Design.DataContext>
              
-            <StackPanel HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" Margin="10">
               <Label Classes="pageTitle" Content="{Binding PageTitle}" />
 
               <Label Classes="form" Content="Kurstitel" />
@@ -26,7 +26,7 @@
               <Label Classes="form" Content="Slut" />
               <TextBox Classes="form" Text="{Binding End}" />
  
-              <CheckBox IsChecked="{Binding ClassRoom}" RenderTransform="scale(1.5)" FontSize="15" Foreground="{DynamicResource ForgroundColor}" Margin="10" >Kursen är i klassrum</CheckBox>
+              <CheckBox IsChecked="{Binding ClassRoom}" RenderTransform="scale(1.5)" FontSize="15" Foreground="{DynamicResource ForgroundColor}" Margin="50 10" >Kursen är i klassrum</CheckBox>
 
               <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30" Spacing="40">
                 <Button Classes="form" Command="{Binding SaveCommand}">

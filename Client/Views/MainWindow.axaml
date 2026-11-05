@@ -44,7 +44,7 @@
 
                         <Button Classes="menu" Command="{Binding GoToTeachersCommand}">
                             <StackPanel Orientation="Horizontal">
-                                <Label Classes="iconMenu" FontFamily="{DynamicResource IconFont}" Content="&#xE73E;" />
+                                <Label Classes="iconMenu" FontFamily="{DynamicResource IconFont}" Content="&#xE600;" />
                                 <Label Content="Lärare" />
                             </StackPanel>
                         </Button>

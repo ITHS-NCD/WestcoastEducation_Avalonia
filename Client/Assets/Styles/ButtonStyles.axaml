@@ -9,6 +9,7 @@
           <Button Classes="warning">Nej</Button>
           <Button Classes="form">Ja</Button>
          </StackPanel>
+         <Button Classes="add">Lägg till student</Button>
 
 
        </StackPanel>
@@ -48,6 +49,15 @@
     <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}" />
     <Setter Property="BorderThickness" Value="2" />
     <Setter Property="CornerRadius" Value="12" />
+   </Style>
+
+   <Style Selector="Button.add">
+    <Setter Property="Background" Value="{DynamicResource ButtonColor}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForgroundColor}" />
+    <Setter Property="FontSize" Value="20" />
+    <Setter Property="Padding" Value="10" />
+    <Setter Property="Margin" Value="20 10" />
+
    </Style>
 </Styles>
 

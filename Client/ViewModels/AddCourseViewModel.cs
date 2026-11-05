@@ -22,12 +22,6 @@ public partial class AddCourseViewModel : ViewModelBase
     [ObservableProperty]
     public partial string End { get; set; } = string.Empty;
 
-    public AddCourseViewModel()
-    {
-        _courseService = new CourseService();
-        PageTitle = "Lägg till en kurs";
-    }
-
     public AddCourseViewModel(ICourseService courseService)
     {
         _courseService = courseService;

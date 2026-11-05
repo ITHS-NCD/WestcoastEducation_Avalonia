@@ -9,11 +9,11 @@
 
   <!-- Add Styles Here -->
    <Style Selector="TextBox">
-    <Setter Property="Background" Value="#F1F5F9"/>
-    <Setter Property="Foreground" Value="#243B53" />
-    <Setter Property="MinWidth" Value="600" />
-    <Setter Property="MaxWidth" Value="600" />
-    <Setter Property="BorderBrush" Value="#CBD5E1" />
+    <Setter Property="Background" Value="{DynamicResource WhiteColor}"/>
+    <Setter Property="Foreground" Value="{DynamicResource TextBoxForgroundColor}" />
+    <Setter Property="MinWidth" Value="700" />
+    <Setter Property="MaxWidth" Value="700" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderColor}" />
     <Setter Property="BorderThickness" Value="3" />
     <Setter Property="FontSize" Value="16" />
     <Setter Property="Margin" Value="0 0 0 8" />

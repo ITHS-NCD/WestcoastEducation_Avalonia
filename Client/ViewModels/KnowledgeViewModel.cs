@@ -14,7 +14,6 @@ namespace Client.ViewModels;
 public partial class KnowledgeViewModel : ViewModelBase
 {
     private readonly ITeacherService _teacherService;
-    // public string _id = string.Empty;
     private string knowledge = string.Empty;
 
     [ObservableProperty]
@@ -27,11 +26,6 @@ public partial class KnowledgeViewModel : ViewModelBase
 
     [ObservableProperty]
     public partial List<string> Knowledge { get; set; } = [];
-
-    public KnowledgeViewModel()
-    {
-
-    }
 
     public KnowledgeViewModel(ITeacherService teacherService, string id)
     {

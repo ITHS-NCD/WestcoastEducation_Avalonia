@@ -8,6 +8,9 @@
   <Color x:Key="PrimaryBorderColor">#AEEFFA</Color>
   <Color x:Key="PrimaryWarningColor">#FF2E2E</Color>
   <Color x:Key="PrimaryButtonColor">#486581</Color>
+  <Color x:Key="PrimaryTextBoxForgroundColor">#243B53</Color>
   <Color x:Key="SecondaryBackgroundColor">#3C556D</Color>
   <Color x:Key="SecondaryBorderColor">#283F4D</Color>
+  <Color x:Key="PrimaryWhiteColor">#F1F5F9</Color>
+  <Color x:Key="PrimaryTextBoxBorderColor">#CBD5E1</Color>
 </ResourceDictionary>

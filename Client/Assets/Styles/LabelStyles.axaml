@@ -30,7 +30,7 @@
    </Style>
 
    <Style Selector="Label.form">
-      <Setter Property="FontSize" Value="20" />
+      <Setter Property="FontSize" Value="28" />
    </Style>
 
    <Style Selector="Label.popup">

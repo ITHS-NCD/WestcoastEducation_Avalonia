@@ -13,12 +13,6 @@ public partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty]
     public partial ViewModelBase CurrentView { get; set; } = new();
 
-    public MainWindowViewModel()
-    {
-        _pageViewFactory = new PageViewFactory();
-        GoToHome();
-    }
-
     public MainWindowViewModel(IPageViewFactory pageViewFactory)
     {
         _pageViewFactory = pageViewFactory;
@@ -60,7 +54,5 @@ public partial class MainWindowViewModel : ViewModelBase
 
     [RelayCommand]
     public void GoToKnowledge(string id) => CurrentView = _pageViewFactory.LoadPageViewModel(Enums.PageViewsEnum.Knowledge, id);
-
-
 
 }

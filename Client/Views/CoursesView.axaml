@@ -15,7 +15,7 @@
             <StackPanel>
               <Label Classes="pageTitle" Content="{Binding PageTitle}" />
 
-              <Button Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToAddCourseCommand}" FontSize="16" Margin="20 10">
+              <Button Classes="add" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToAddCourseCommand}">
                 <StackPanel Orientation="Horizontal">
                   <Label FontFamily="{DynamicResource IconFont}" Content="&#xE3D4;" Margin="0 3 0 0 " />
                   <Label Content="Lägg till kurs" />
@@ -24,15 +24,15 @@
 
               <Border Classes="topBar">
                 <Grid ColumnDefinitions="450,200,200,200,*,60,60">
-                  <Label Content="Kurs titel" />
-                  <Label Grid.Column="1" Content="Längd" />
-                  <Label Grid.Column="2" Content="Start" />
-                  <Label Grid.Column="3" Content="Slut" />
-                  <Label Grid.Column="4" Content="I klassrum" />
+                  <Label Classes="form" Content="Kurs titel" />
+                  <Label Classes="form" Grid.Column="1" Content="Längd" />
+                  <Label Classes="form" Grid.Column="2" Content="Start" />
+                  <Label Classes="form" Grid.Column="3" Content="Slut" />
+                  <Label Classes="form" Grid.Column="4" Content="I klassrum" />
                 </Grid>
               </Border>
-              <ScrollViewer Height="1000">
-                <ItemsControl ItemsSource="{Binding Courses}" Margin="0 10 0 0">
+              <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Courses}">
                   <ItemsControl.ItemTemplate>
                     <DataTemplate>
                       <Grid ColumnDefinitions="450,200,200,200,*,60,60">
@@ -42,8 +42,7 @@
                         <Label Grid.Column="3" Content="{Binding End}" />
                         <Label Grid.Column="4" Content="{Binding CourseType}" />
                         <Button Grid.Column="5" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).GoToEditCourseCommand}" CommandParameter="{Binding CourseNumber}" FontFamily="{DynamicResource IconFont}" Content="&#xEBC6;" />
-                        <Button Grid.Column="6" Command="{Binding $parent[UserControl].DataContext.DeleteCommand}" CommandParameter="{Binding CourseNumber}" FontFamily="{DynamicResource IconFont}" Content="&#xE4A6;" />
-
+                        <Button Grid.Column="6" Command="{Binding $parent[UserControl].DataContext.DeleteCommand}" CommandParameter="{Binding CourseNumber}" FontFamily="{DynamicResource IconFont}" Content="&#xE4A6;" Foreground="{DynamicResource WarningColor}" />
                       </Grid>
                     </DataTemplate>
                   </ItemsControl.ItemTemplate>
@@ -56,8 +55,7 @@
                       <Label Classes="popup" Content="Är du säker du vill ta bort kursen?" />
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="30">
                       <Button Classes="form" Command="{Binding CancelCommand}">Nej</Button>
-                      <Button Classes="form" Command="{Binding ConfirmCommand}">Ja</Button>
-
+                      <Button Classes="warning" Command="{Binding ConfirmCommand}">Ja</Button>
                     </StackPanel>
                   </StackPanel>
                 </Border>

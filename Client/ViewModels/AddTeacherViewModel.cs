@@ -52,7 +52,8 @@ public partial class AddTeacherViewModel : ViewModelBase
             LastName = LastName,
             Email = Email,
             PhoneNumber = PhoneNumber,
-            Address = new Address { AddressLine = AddressLine, PostalCode = PostalCode, City = City }
+            Address = new Address { AddressLine = AddressLine, PostalCode = PostalCode, City = City },
+            Knowledge = []
         };
 
         await _teacherService.Add(teacher);

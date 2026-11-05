@@ -31,12 +31,6 @@ public partial class EditStudentViewModel : ViewModelBase
     [ObservableProperty]
     public partial Address Address { get; set; } = new() { AddressLine = string.Empty, PostalCode = string.Empty, City = string.Empty };
 
-
-    public EditStudentViewModel()
-    {
-        PageTitle = "Uppdatera student";
-    }
-
     public EditStudentViewModel(IStudentService studentService, string studentId)
     {
         _studentService = studentService;
